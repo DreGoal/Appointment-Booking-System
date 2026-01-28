@@ -8,6 +8,13 @@ export const routes: Routes = [
       import('./auth/auth-module')
         .then(m => m.AuthModule)
   },
+  {
+  path: 'provider',
+  loadChildren: () =>
+    import('./provider/provider-routing-module')
+      .then(m => m.ProviderRoutingModule)
+}
+
 //   {
 //     path: 'dashboard',
 //     canActivate: [authGuard],
