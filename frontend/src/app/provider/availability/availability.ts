@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AvailabilityService } from '../../core/services/AvailabilityService';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -19,7 +19,7 @@ dayOfWeek = 'MONDAY';
   endTime = '';
   slotDuration = 30;
 
-  constructor(private availabilityService: AvailabilityService) {}
+  private availabilityService = inject(AvailabilityService);
 
   submit() {
     const payload = {

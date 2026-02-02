@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { authGuard } from './core/guards/auth-guard';
 
 export const routes: Routes = [
     {
@@ -13,7 +12,14 @@ export const routes: Routes = [
   loadChildren: () =>
     import('./provider/provider-routing-module')
       .then(m => m.ProviderRoutingModule)
+},
+{
+  path: 'slot-availability',
+  loadComponent: () =>
+    import('./feature/slot-availability/slot-availability')
+      .then(m => m.SlotAvailabilityComponent)
 }
+
 
 //   {
 //     path: 'dashboard',
